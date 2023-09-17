@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Letters</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        /* Add a black background to the body and some padding */
+        body {
+            background-color: black;
+            padding-top: 20px; /* Add padding to push content down */
+        }
+
+        /* Style for the menu */
+        .menu-bar {
+            background-color: #020000; /* Set the background color of the menu bar */
+            position: absolute; /* Position the menu absolutely within the header */
+            top: 20; /* Align the menu to the top of the header */
+            right: 20px; /* Align the menu to the right side of the header with 20px margin */
+            z-index: 1; /* Set a higher z-index to ensure it's above other content */
+        }
+
+        /* Style the menu items */
+        .menu-bar a {
+            color: white;
+            text-align: center;
+            padding: 14px 16px; /* Add padding to the menu items */
+            text-decoration: none;
+        }
+
+        /* Change the color of menu items on hover */
+        .menu-bar a:hover {
+            background-color: #FFB703;
+        }
+
+        /* Center the letter images */
+        .asl-letters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure the content takes at least the full viewport height */
+        }
+
+        /* Style for individual images (optional) */
+        .letter-row img {
+            margin: 10px; /* Add some space around each image (optional) */
+        }
+        
+        /* Navigation arrows */
+        .nav-arrows {
+            text-align: center;
+        }
+
+        .nav-arrow {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        /* Style for the logo */
+        .logo {
+            position: absolute;
+            top: 20px; /* Align the logo 20px from the top */
+            left: 20px; /* Align the logo 20px from the left */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Add the logo image here -->
+        <div class="logo">
+            <img src="file:///C:\Users\Sharon\Desktop\ASL\logo.jpeg" alt="Your image" width="150" height="150">
+        </div>
+        <h1>ASL Letters Gallery</h1>
+        <!-- Menu bar -->
+        <nav id="menu" class="menu-bar">
+            <a href="ASL.html">Home</a>
+            <a href="#letters">Letters</a>
+            <a href="practice.html">Practice</a>
+            <a href="wordle.html">Wordle</a>
+            <a href="creators.html">Creators</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="asl-letters" id="letters">
+            <div class="nav-arrows">
+                <a href="#letters" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/A.png" alt="A image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/B.png" alt="B image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/C.png" alt="C image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/D.png" alt="D image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters1" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+        
+        <!-- Next set of letters (E, F, G, H) -->
+        <section class="asl-letters" id="next-letters1">
+            <div class="nav-arrows">
+                <a href="#letters" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/E.png" alt="E image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/F.png" alt="F image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/G.png" alt="G image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/H.png" alt="H image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters2" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+        
+        <!-- Next set of letters (I, J, K, L) -->
+        <section class="asl-letters" id="next-letters2">
+            <div class="nav-arrows">
+                <a href="#next-letters1" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/I.png" alt="I image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/J.png" alt="J image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/K.png" alt="K image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/L.png" alt="L image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters3" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+
+        <!-- Next set of letters (M, N, O, P) -->
+        <section class="asl-letters" id="next-letters3">
+            <div class="nav-arrows">
+                <a href="#next-letters2" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/M.png" alt="M image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/N.png" alt="N image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/O.png" alt="O image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/P.png" alt="P image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters4" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+
+        <!-- Next set of letters (Q, R, S, T) -->
+        <section class="asl-letters" id="next-letters4">
+            <div class="nav-arrows">
+                <a href="#next-letters3" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/Q.png" alt="Q image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/R.png" alt="R image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/S.png" alt="S image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/T.png" alt="T image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters5" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+
+        <!-- Next set of letters (U, V, W, X) -->
+        <section class="asl-letters" id="next-letters5">
+            <div class="nav-arrows">
+                <a href="#next-letters4" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/U.png" alt="U image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/V.png" alt="V image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/W.png" alt="W image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/X.png" alt="X image" width="250" height="250"></img>
+                
+                <!-- Add more letters as needed -->
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters6" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+        <section class="asl-letters" id="next-letters6">
+            <div class="nav-arrows">
+                <a href="#next-letters5" class="nav-arrow" id="prev-arrow">&lt; </a>
+            </div>
+            <div class="letter-row">
+                <!-- Display letters for the current set -->
+                <!-- On each set, display four letters -->
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/Y.png" alt="Y image" width="250" height="250"></img>
+                <img src="file:///C:/Users/Sharon/Desktop/ASL/ASL Letters Black/Z.png" alt="Z image" width="250" height="250"></img>
+            </div>
+            <!-- Navigation arrows -->
+            <div class="nav-arrows">
+                <a href="#next-letters6" class="nav-arrow" id="next-arrow"> &gt;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ASL Letters. All rights reserved.</p>
+    </footer>
+</body>
+</html>
