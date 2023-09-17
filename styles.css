@@ -1,0 +1,105 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Set the background color to full black */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Push the logo and menu to opposite sides */
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+}
+
+#logo{
+   
+}
+
+#menu ul {
+    display: flex;
+    justify-content: flex-end; /* Move the menu to the right side */
+    align-items: center;
+    margin-left: auto; /* Push the menu to the right-most edge */
+}
+
+#menu li {
+    margin-left: 20px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo img {
+    width: 150px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Style the hero section */
+.hero {
+    background-color: #000000;
+    text-align: center; /* Align content to the center */
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 6rem; /* Adjust font size */
+    margin-bottom: 20px;
+}
+
+#express {
+    color: #FFB703; /* Set color for "EXPRESS" text */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Adjust font size */
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #FFB703; /* Add a border to the button */
+}
+
+/* Style content sections */
+.content {
+    padding: 40px;
+}
+
+.content h2 {
+    font-size: 2rem; /* Adjust font size */
+    margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
