@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000; /* Change background color to black */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #FFB703; /* Change heading color to yellow */
+        }
+        #wordle-game {
+        max-width: 400px;
+        margin: 50px auto 0; 
+    /* Center the game horizontally */
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: left; /* Adjust text alignment */
+        }
+        header {
+            margin-top: 250px; /* Add margin-top to move the header down */
+        }
+
+        #guess-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #feedback {
+            text-align: center;
+            font-size: 24px; /* Increased font size */
+        }
+        span {
+            margin: 0 2px;
+        }
+        span[style*="color: green;"] {
+            color: #6a994e;
+            font-weight: bold; /* Highlight green letters */
+        }
+        span[style*="color: yellow;"] {
+            color: #FFB703;
+            font-weight: bold; /* Highlight yellow letters */
+        }
+        span[style*="color: white;"] {
+            color: #ddd;
+        }
+        /* Menu styles */
+        .menu-bar {
+            background-color: #000;
+            overflow: hidden;
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+        .menu-bar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .menu-bar a:hover {
+            background-color: #FFB703;
+        }
+        /* Logo styles */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Add your logo image here -->
+        <div class="logo">
+            <img src="file:///C:\Users\Sharon\Desktop\ASL\logo.jpeg" alt="Your image" width="150" height="150">
+        </div>
+       
+        <nav id="menu" class="menu-bar">
+            <a href="ASL.html">Home</a>
+            <a href="letters.html">Letters</a>
+            <a href="practice.html">Practice</a>
+            <a href="wordle.html">Wordle</a>
+            <a href="creators.html">Creators</a>
+        </nav>
+    </header>
+
+    <h1>Wordle Game</h1>
+    <div id="wordle-game">
+        <div id="guess-input">
+            <input type="text" id="guess" placeholder="Enter your guess">
+            <button onclick="checkGuess()">Guess</button>
+            <button onclick="restartGame()">Restart</button> <!-- Add the restart button -->
+        </div>
+        <div id="feedback">
+            <!-- Feedback for correct and incorrect guesses -->
+        </div>
+    </div>
+
+    <script>
+        // Array of 5-letter words
+        const wordList = [
+            "apple", "beach", "brick", "chess", "cloud", "coast", "dance", "earth", "fable", "flame",
+            "grape", "happy", "house", "juice", "knife", "liver", "magic", "music", "ocean", "piano",
+            "pizza", "queen", "river", "smile", "snake", "space", "sugar", "table", "thorn", "tiger",
+            "unity", "waste", "zebra", "arrow", "black", "bread", "brush", "chair", "clock", "color",
+            "dream", "fairy", "flash", "flower", "glass", "green", "honey", "jelly", "lunch", "mango",
+            "night", "paint", "peace", "puppy", "robin", "scent", "shoes", "skate", "smoke", "stars",
+            "sword", "toast", "water", "wrist", "angel"
+        ];
+
+        let targetWord = getRandomWord();
+        let attempts = 0;
+
+        function getRandomWord() {
+            return wordList[Math.floor(Math.random() * wordList.length)];
+        }
+
+        function checkGuess() {
+            const guessInput = document.getElementById("guess");
+            const guess = guessInput.value.toLowerCase();
+            guessInput.value = ""; // Clear the input field
+
+            const feedback = document.getElementById("feedback");
+            const feedbackMessage = document.createElement("p");
+
+            if (guess.length !== targetWord.length) {
+                feedbackMessage.textContent = "Guess must be the same length as the target word.";
+            } else if (guess === targetWord) {
+                feedbackMessage.textContent = "Congratulations! You guessed the word.";
+                feedbackMessage.style.color = "green";
+            } else {
+                const feedbackText = [];
+                for (let i = 0; i < guess.length; i++) {
+                    if (guess[i] === targetWord[i]) {
+                        feedbackText.push(`<span style="color: green; font-size: 28px;">${guess[i]}</span>`);
+                    } else if (targetWord.includes(guess[i])) {
+                        feedbackText.push(`<span style="color: yellow; font-size: 28px;">${guess[i]}</span>`);
+                    } else {
+                        feedbackText.push(`<span style="color: white;">${guess[i]}</span>`);
+                    }
+                }
+                feedbackMessage.innerHTML = feedbackText.join("");
+            }
+
+            feedback.appendChild(feedbackMessage);
+        }
+
+        function restartGame() {
+            targetWord = getRandomWord();
+            attempts = 0;
+            document.getElementById("feedback").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
