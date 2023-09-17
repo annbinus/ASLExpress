@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle Game</title>
+    <title style="font-size: 60px;">Wordle Game</title>
     <style>
         /* Add your CSS styles here */
         body {
@@ -17,20 +17,21 @@
             color: #FFB703; /* Change heading color to yellow */
         }
         #wordle-game {
-        max-width: 400px;
-        margin: 50px auto 0; 
-    /* Center the game horizontally */
-        padding: 20px;
-        border: 1px solid #ddd;
-        background-color: #000;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        text-align: left; /* Adjust text alignment */
+            max-width: 400px;
+            margin: 50px auto 0;
+            /* Center the game horizontally */
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left;
+            /* Adjust text alignment */
         }
         header {
-            margin-top: 250px; /* Add margin-top to move the header down */
+            margin-top: 250px;
+            /* Add margin-top to move the header down */
         }
-
         #guess-input {
             display: flex;
             align-items: center;
@@ -58,18 +59,21 @@
         }
         #feedback {
             text-align: center;
-            font-size: 24px; /* Increased font size */
+            font-size: 24px;
+            /* Increased font size */
         }
         span {
             margin: 0 2px;
         }
         span[style*="color: green;"] {
             color: #6a994e;
-            font-weight: bold; /* Highlight green letters */
+            font-weight: bold;
+            /* Highlight green letters */
         }
         span[style*="color: yellow;"] {
             color: #FFB703;
-            font-weight: bold; /* Highlight yellow letters */
+            font-weight: bold;
+            /* Highlight yellow letters */
         }
         span[style*="color: white;"] {
             color: #ddd;
@@ -100,9 +104,31 @@
             top: 10px;
             left: 20px;
         }
-        .logo img {s
+        .logo img {
             width: 150px;
             height: 150px;
+        }
+        /* Wordle Keyboard styles */
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .keyboard button {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .keyboard button img {
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
@@ -110,11 +136,11 @@
     <header>
         <!-- Add your logo image here -->
         <div class="logo">
-            <img src="logo.jpeg" alt="Your image" width="150" height="150">
+            <img src="file:///C:\Users\Sharon\Desktop\ASL\logo.jpeg" alt="Your image" width="150" height="150">
         </div>
        
         <nav id="menu" class="menu-bar">
-            <a href="index.html">Home</a>
+            <a href="ASL.html">Home</a>
             <a href="letters.html">Letters</a>
             <a href="practice.html">Practice</a>
             <a href="wordle.html">Wordle</a>
@@ -127,23 +153,303 @@
         <div id="guess-input">
             <input type="text" id="guess" placeholder="Enter your guess">
             <button onclick="checkGuess()">Guess</button>
-            <button onclick="restartGame()">Restart</button> <!-- Add the restart button -->
+            <button onclick="restartGame()">Restart</button>
         </div>
-        <div id="feedback">
-            <!-- Feedback for correct and incorrect guesses -->
+        <div id="feedback"></div>
+
+        <!-- Wordle Keyboard -->
+        <div class="keyboard">
+            <button onclick="handleKeyPress('A')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\A.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('B')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\B.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('C')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\C.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('D')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\D.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('E')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\E.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('F')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\F.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('G')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\G.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('H')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\H.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('I')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\I.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('J')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\J.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('K')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\K.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('L')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\L.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('M')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\M.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('N')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\N.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('O')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\O.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('P')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\P.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('Q')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\Q.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('R')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\R.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('S')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\S.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('T')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\T.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('U')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\U.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('V')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\V.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('W')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\W.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('X')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\X.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('Y')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\Y.png" width="50" height="50"></button>
+            <button onclick="handleKeyPress('Z')"><img src="file:///C:\Users\13213\Desktop\My Workspace\New\Letters\Z.png" width="50" height="50"></button>
         </div>
     </div>
-
+    
     <script>
         // Array of 5-letter words
         const wordList = [
-            "apple", "beach", "brick", "chess", "cloud", "coast", "dance", "earth", "fable", "flame",
-            "grape", "happy", "house", "juice", "knife", "liver", "magic", "music", "ocean", "piano",
-            "pizza", "queen", "river", "smile", "snake", "space", "sugar", "table", "thorn", "tiger",
-            "unity", "waste", "zebra", "arrow", "black", "bread", "brush", "chair", "clock", "color",
-            "dream", "fairy", "flash", "flower", "glass", "green", "honey", "jelly", "lunch", "mango",
-            "night", "paint", "peace", "puppy", "robin", "scent", "shoes", "skate", "smoke", "stars",
-            "sword", "toast", "water", "wrist", "angel"
+        "apple",
+  "beach",
+  "brick",
+  "chess",
+  "cloud",
+  "coast",
+  "dance",
+  "earth",
+  "fable",
+  "flame",
+  "grape",
+  "happy",
+  "house",
+  "juice",
+  "knife",
+  "liver",
+  "magic",
+  "music",
+  "ocean",
+  "piano",
+  "pizza",
+  "queen",
+  "river",
+  "smile",
+  "snake",
+  "space",
+  "sugar",
+  "table",
+  "thorn",
+  "tiger",
+  "unity",
+  "waste",
+  "zebra",
+  "arrow",
+  "black",
+  "bread",
+  "brush",
+  "chair",
+  "clock",
+  "color",
+  "dream",
+  "fairy",
+  "flash",
+  "flower",
+  "glass",
+  "green",
+  "honey",
+  "jelly",
+  "lunch",
+  "mango",
+  "night",
+  "paint",
+  "peace",
+  "puppy",
+  "robin",
+  "scent",
+  "shoes",
+  "skate",
+  "smoke",
+  "stars",
+  "sword",
+  "toast",
+  "water",
+  "wrist",
+  "angel",
+  "apple",
+  "beach",
+  "brick",
+  "chess",
+  "cloud",
+  "coast",
+  "dance",
+  "earth",
+  "fable",
+  "flame",
+  "grape",
+  "happy",
+  "house",
+  "juice",
+  "knife",
+  "liver",
+  "magic",
+  "music",
+  "ocean",
+  "piano",
+  "pizza",
+  "queen",
+  "river",
+  "smile",
+  "snake",
+  "space",
+  "sugar",
+  "table",
+  "thorn",
+  "tiger",
+  "unity",
+  "waste",
+  "zebra",
+  "arrow",
+  "black",
+  "bread",
+  "brush",
+  "chair",
+  "clock",
+  "color",
+  "dream",
+  "fairy",
+  "flash",
+  "flower",
+  "glass",
+  "green",
+  "honey",
+  "jelly",
+  "lunch",
+  "mango",
+  "night",
+  "paint",
+  "peace",
+  "puppy",
+  "robin",
+  "scent",
+  "shoes",
+  "skate",
+  "smoke",
+  "stars",
+  "sword",
+  "toast",
+  "water",
+  "wrist",
+  "angel",
+  "apple",
+  "beach",
+  "brick",
+  "chess",
+  "cloud",
+  "coast",
+  "dance",
+  "earth",
+  "fable",
+  "flame",
+  "grape",
+  "happy",
+  "house",
+  "juice",
+  "knife",
+  "liver",
+  "magic",
+  "music",
+  "ocean",
+  "piano",
+  "pizza",
+  "queen",
+  "river",
+  "smile",
+  "snake",
+  "space",
+  "sugar",
+  "table",
+  "thorn",
+  "tiger",
+  "unity",
+  "waste",
+  "zebra",
+  "arrow",
+  "black",
+  "bread",
+  "brush",
+  "chair",
+  "clock",
+  "color",
+  "dream",
+  "fairy",
+  "flash",
+  "flower",
+  "glass",
+  "green",
+  "honey",
+  "jelly",
+  "lunch",
+  "mango",
+  "night",
+  "paint",
+  "peace",
+  "puppy",
+  "robin",
+  "scent",
+  "shoes",
+  "skate",
+  "smoke",
+  "stars",
+  "sword",
+  "toast",
+  "water",
+  "wrist",
+  "angel",
+  "apple",
+  "beach",
+  "brick",
+  "chess",
+  "cloud",
+  "coast",
+  "dance",
+  "earth",
+  "fable",
+  "flame",
+  "grape",
+  "happy",
+  "house",
+  "juice",
+  "knife",
+  "liver",
+  "magic",
+  "music",
+  "ocean",
+  "piano",
+  "pizza",
+  "queen",
+  "river",
+  "smile",
+  "snake",
+  "space",
+  "sugar",
+  "table",
+  "thorn",
+  "tiger",
+  "unity",
+  "waste",
+  "zebra",
+  "arrow",
+  "black",
+  "bread",
+  "brush",
+  "chair",
+  "clock",
+  "color",
+  "dream",
+  "fairy",
+  "flash",
+  "flower",
+  "glass",
+  "green",
+  "honey",
+  "jelly",
+  "lunch",
+  "mango",
+  "night",
+  "paint",
+  "peace",
+  "puppy",
+  "robin",
+  "scent",
+  "shoes",
+  "skate",
+  "smoke",
+  "stars",
+  "sword",
+  "toast",
+  "water",
+  "wrist",
         ];
 
         let targetWord = getRandomWord();
@@ -163,6 +469,7 @@
 
             if (guess.length !== targetWord.length) {
                 feedbackMessage.textContent = "Guess must be the same length as the target word.";
+                feedbackMessage.style.color = "white";
             } else if (guess === targetWord) {
                 feedbackMessage.textContent = "Congratulations! You guessed the word.";
                 feedbackMessage.style.color = "green";
@@ -187,6 +494,11 @@
             targetWord = getRandomWord();
             attempts = 0;
             document.getElementById("feedback").innerHTML = "";
+        }
+
+        function handleKeyPress(letter) {
+            const guessInput = document.getElementById("guess");
+            guessInput.value += letter;
         }
     </script>
 </body>
