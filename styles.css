@@ -1,0 +1,138 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Set the background color to full black */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Push the logo and menu to opposite sides */
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+}
+
+#logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: flex-end; /* Move the menu to the right side */
+    align-items: center;
+    margin-left: auto; /* Push the menu to the right-most edge */
+}
+
+#menu li {
+    margin-left: 20px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Add your styles here */
+
+/* Style the button section */
+
+.game-button {
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #FFB703; /* Updated button color */
+    color: black; /* Updated font color */
+    font-family: "Roboto", sans-serif; /* Use Roboto font */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.game-button:hover {
+    background: linear-gradient(45deg, #dc2f02 0%, #dc2f02 100%); /* Shift gradient from left to right */
+    transform: scale(1.1); /* Zoom on hover */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.easy {
+    background-color: #FFB703;
+}
+
+.medium {
+    background-color: #FFB703;
+}
+
+.difficult {
+    background-color: #FFB703;
+}
+
+.freestyle {
+    background-color: #FFB703;
+}
+
+
+/* Additional CSS styles can be added here */
+.logo img {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+
+/* Style content sections */
+.content {
+    padding: 40px;
+}
+
+.content h2 {
+    font-size: 2rem; /* Adjust font size */
+    margin-bottom: 20px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gradient-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #FFD100, #FFB703);
+    color: white;
+    transition: background-image 0.3s, transform 0.2s;
+}
+
+.gradient-btn:hover {
+    background-image: linear-gradient(to bottom, #FFB703, #FFD100);
+    transform: scale(1.05);
+}
+</style>
+
+/* Style the footer */
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
+
