@@ -10,6 +10,7 @@ body {
     background-color: black;
     color: white;
     font-family: 'Roboto', Arial, sans-serif;
+
 }
 
 /* Header styles */
@@ -21,10 +22,8 @@ header {
     padding: 20px;
 }
 
-#logo {
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
+#logo{
+   
 }
 
 #menu ul {
@@ -35,14 +34,21 @@ header {
 }
 
 #menu li {
-    margin-left: 20px;
+    margin-left: 100px;
 }
 
 #menu a {
+    font-family: 'Hazelton';
+    font-size: 1rem;
+    align-items: center;
     text-decoration: none;
     color: white;
 }
 
+.logo img {
+    width: 150px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
 /* Style the hero section */
 .hero {
     background-color: #000000;
@@ -83,10 +89,12 @@ header {
 
 /* Style content sections */
 .content {
+    font-family: 'Roboto';
     padding: 40px;
 }
 
 .content h2 {
+    font-family: 'Roboto';
     font-size: 2rem; /* Adjust font size */
     margin-bottom: 20px;
 }

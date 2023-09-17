@@ -5,24 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASL Express</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Define the menu bar styles */
+        .menu-bar {
+            background-color: #000000; /* Set the background color of the menu bar */
+            overflow: hidden;
+        }
+
+        /* Style the menu items */
+        .menu-bar a {
+            float: left; /* Float the menu items to the left */
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px; /* Add padding to the menu items */
+            text-decoration: none;
+        }
+
+        /* Change the color of menu items on hover */
+        .menu-bar a:hover {
+            background-color: #FFB703;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-
-<!-- Add the logo image here -->
+        <!-- Add the logo image here -->
         <div class="logo">
-            <img src="file:///C:\Users\Sharon\Desktop\ASL\logo.jpg" alt= "your image" width={10} height={10} ></img>
+            <img src="file:///C:\Users\Sharon\Desktop\ASL\logo.jpeg" alt="Your image" width="100" height="100">
         </div>
        
-	 <nav id="menu">
-
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Letters</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Wordle</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <nav id="menu" class="menu-bar">
+            <a href="ASL.html">Home</a>
+            <a href="letters.html">Letters</a>
+            <a href="practice.html">Practice</a>
+            <a href="wordle.html">Wordle</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -37,13 +56,11 @@
 
         <section class="content">
             <h2>About Us</h2>
-            <p></p>
+            <p>Welcome to ASL Express, your premier destination for learning and practicing American Sign Language (ASL).</p> 
+            <p>Our mission is to empower individuals from all walks of life to engage with and embrace the vibrant world of ASL, </p>
+            <p>fostering meaningful connections and breaking down communication barriers.</p>
         </section>
-
-        <section class="content">
-            <h2>Services</h2>
-            <p></p>
-        </section>
+        
     </main>
 
     <footer>
